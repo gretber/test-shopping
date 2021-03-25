@@ -1,7 +1,11 @@
 // Core
 import { useEffect, useState } from 'react';
+
 // Components
 import { Header } from '../../components/Header';
+
+// Containers
+import { OrderContainer } from '../OrderContainer';
 
 function App() {
   const [ coordinates, setCoordinates ] = useState({});
@@ -20,22 +24,11 @@ function App() {
     }
   },[])
   console.log(coordinates)
-const handlerClick = () => {
-
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(({ coords }) => {
-      console.log(coords)
-    })
-  } else {
-    console.log('rejected')
-  }
-}
-
  
   return (
     <div className="App">
       <Header />
-      <button onClick={handlerClick}>get geo</button>
+      <OrderContainer />
     </div>
   );
 }
