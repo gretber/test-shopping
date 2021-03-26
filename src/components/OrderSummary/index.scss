@@ -2,4 +2,15 @@
     width: 46%;
     padding: 20px 15px 15px;
     background-color: #E6E9F0;
+    border-radius: 0 5px 5px 0;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        font-size: 12px;
+        text-decoration-color: #979797;
+    }
 }

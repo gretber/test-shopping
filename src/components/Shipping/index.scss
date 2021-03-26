@@ -1,0 +1,61 @@
+.shipping {
+    &__title {
+        margin: 20px 0 !important;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+
+    &__name-wrapper {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    &__daytime-phone-wrapper {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        label {
+            margin-left: 10px;
+        }
+    }
+
+    &__adress-wrapper {
+        margin-bottom: 10px;
+    }
+
+    &__city-wrapper {
+        display: flex;
+        position: relative;
+        margin: 20px 0;
+        button {
+            top: 10px;
+            right: 10px;
+            position: absolute;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: url(../../assets/images/location-icon.png) no-repeat;
+        }
+    }
+
+    &__country-select {
+        background: url(../../assets/images/select-arrow.png) no-repeat;
+        background-position:  calc(100% - 10px);
+        color: #6B6B6B;
+        width: 60%;
+    }
+
+    &__country-wrapper {
+       display: flex;
+       margin-bottom: 20px;
+    }
+
+    &__zip-input {
+        width: 40%;
+        margin-left: 20px;
+    }
+}

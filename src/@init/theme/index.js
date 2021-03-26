@@ -7,7 +7,10 @@ export const theme = createMuiTheme({
         },
         secondary: {
             main: '#979797',
-        }
+        },
+        text: {
+            primary: '#777879',
+        },
     },
     breakpoints: {
         values: {
@@ -18,4 +21,31 @@ export const theme = createMuiTheme({
           xl: 1920,
         },
     },
+    typography: {
+        subtitle1: {
+            fontSize: 16,
+        },
+        subtitle2: {
+            fontSize: 13,
+            lineHeight: '12px',
+        },
+        body1: {
+            fontSize: 12,
+        },
+        body2: {
+            fontSize: 10,
+        },
+        h3: {
+            fontSize: 26,
+        },
+    },
+    overrides: {
+        MuiButton: {
+            root: {
+                width: 180,
+                height: 45,
+                textTransform: "none",
+            }
+        }
+    }
 });

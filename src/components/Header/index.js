@@ -5,8 +5,8 @@ import './index.scss';
 import {Container, Typography} from '@material-ui/core';
 
 // Images
-import logo from '../../static/images/logotype.png';
-import shape from '../../static/images/shape.png';
+import logo from '../../assets/images/logotype.png';
+import shape from '../../assets/images/shape.png';
 
 export const Header = () => {
     return (

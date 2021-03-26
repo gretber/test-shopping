@@ -12,10 +12,10 @@ export const OrderContainer = () => {
 
     return(
         <Container maxWidth="sm">
-            <section className='ordering'>
+            <main className='ordering'>
                 <OrderData />
                 <OrderSummary />
-            </section>
+            </main>
         </ Container>
     )
 }
