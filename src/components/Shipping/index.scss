@@ -3,10 +3,6 @@
         margin: 20px 0 !important;
     }
 
-    .full-width {
-        width: 100%;
-    }
-
     &__name-wrapper {
         margin-bottom: 10px;
         width: 100%;
@@ -45,7 +41,6 @@
     &__country-select {
         background: url(../../assets/images/select-arrow.png) no-repeat;
         background-position:  calc(100% - 10px);
-        color: #6B6B6B;
         width: 60%;
     }
 

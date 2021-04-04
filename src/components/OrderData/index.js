@@ -1,5 +1,5 @@
 // Core
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Styles
 import './index.scss';
@@ -15,11 +15,68 @@ import { Shipping } from '../Shipping';
 import { Billing } from '../Billing';
 import { Payment } from '../Payment';
 
+// Helpers
+import { getLocationAddress } from '../../helpers/getLocationAddress';
+
 export const OrderData = () => {
     const [shipping, setShipping] = useState(true);
     const [billing, setBilling] = useState(false);
     const [payment, setPayment] = useState(false);
     const [count, setCount] = useState(0);
+
+    const initialShippingInput = {
+        fullName: 'Full Name',
+        daytimePhone: 'Daytime Phone',
+        streetAddress: 'Street Address',
+        aptSuiteBldgGateCode: 'Apt, Suite, Bldg, Gate Code. (optional)',
+        city: 'City',
+        country: 'Country',
+        zip: 'ZIP',
+    }
+
+    const initialError = {
+        formErrors: {
+            fullName: '', daytimePhone: '', streetAddress: '',
+            aptSuiteBldgGateCode: '', city: '', country: '', zip: ''
+        },
+        fullName: false,
+        daytimePhone: false,
+        streetAddress: false,
+        aptSuiteBldgGateCode: false,
+        city: false,
+        country: false,
+        zip: false,
+        formValid: false
+    }
+
+    const [ shippingInput, setShippingInput ] = useState(initialShippingInput);
+    const [ error, setError ] = useState(initialError)
+
+    const [ locationAddress, setLocationAddress ] = useState(null);
+
+    useEffect(()=>{
+        getLocationAddress(setLocationAddress);
+    },[])
+
+    useEffect(() => {
+        if(locationAddress){
+            const { road, house_number, city, country, postcode } = locationAddress;
+
+            setShippingInput( prevState => {
+                return {
+                    ...prevState,
+                    streetAddress: `${road}, ${house_number}`,
+                    city,
+                    country,
+                    zip: postcode,
+                }
+            })
+        }
+    },[locationAddress])
+
+    const handleOnLocationButtonClick = () => {
+        getLocationAddress(setLocationAddress);
+    }
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -53,7 +110,7 @@ export const OrderData = () => {
 
     let stepJSX = <Shipping />;
    switch(count){
-        case 0: stepJSX = <Shipping />
+        case 0: stepJSX = <Shipping handleOnLocationButtonClick={handleOnLocationButtonClick} shippingInput={shippingInput} setShippingInput={setShippingInput} />
         break
         case 1: stepJSX = <Billing />
         break

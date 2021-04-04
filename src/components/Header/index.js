@@ -2,7 +2,7 @@
 import './index.scss';
 
 // Material
-import {Container, Typography} from '@material-ui/core';
+import {Container, Typography, Badge} from '@material-ui/core';
 
 // Images
 import logo from '../../assets/images/logotype.png';
@@ -19,7 +19,9 @@ export const Header = () => {
                     </div>
                     <div className='cart'>
                         <span className='cart__text'>cart</span>
-                        <img className='cart__shape' src={shape} alt='shape'/>
+                        <Badge badgeContent={3} color="error">
+                            <img className='cart__shape' src={shape} alt='shape'/>
+                        </Badge>
                     </div>
                 </div>
             </Container>

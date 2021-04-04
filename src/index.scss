@@ -23,10 +23,16 @@ input, select {
   box-sizing: border-box;
   padding: 10px 15px;
   -webkit-appearance: none;
+  color: #6B6B6B;
   &:focus {
     border: 1px solid #DEDCDC;
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
     outline: none;
   }
+}
+
+.full-width {
+  width: 100%;
 }
 
 

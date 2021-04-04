@@ -8,7 +8,7 @@ import { OrderSummary } from '../../components/OrderSummary';
 // Material
 import Container from '@material-ui/core/Container';
 
-export const OrderContainer = () => {
+export const OrderContainer = ({locationAddress}) => {
 
     return(
         <Container maxWidth="sm">
